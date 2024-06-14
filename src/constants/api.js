@@ -1,7 +1,5 @@
-import { LANGUAGE } from "./option";
-
 const END_POINT = {
-  POPULAR_MOVIES: (page, language = LANGUAGE.KOREAN) => `/popular?language=${language}&page=${page}`,
+  POPULAR_MOVIES: (param) => `/popular?${param}`,
 };
 
 export default END_POINT;

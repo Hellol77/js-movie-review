@@ -1,4 +1,5 @@
 import END_POINT from "../constants/api";
+import { LANGUAGE } from "../constants/option";
 
 class Api {
   constructor() {
@@ -23,7 +24,12 @@ class Api {
   }
 
   async getMovies(page) {
-    return await this.get(END_POINT.POPULAR_MOVIES(page));
+    const param = new URLSearchParams({
+      language: LANGUAGE.KOREAN,
+      page,
+    });
+
+    return await this.get(END_POINT.POPULAR_MOVIES(param));
   }
 }
 
